@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheckList do Zé</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>✅ CheckList do Zé</h1>
+
+  <div class="score-board">
+    ⭐ Pontuação: <span id="score">0</span> | 🏅 <span id="achievements">Nenhuma conquista</span>
+  </div>
+
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+  <small id="progressText"></small>
+
+  <div class="category">
+    <input type="text" id="categoryInput" placeholder="Nova Categoria">
+    <button onclick="addCategory()">Adicionar Categoria</button>
+  </div>
+  <div id="categoryList"></div>
+
+  <div class="task-form">
+    <input type="text" id="taskInput" placeholder="Nova Tarefa">
+    <button onclick="addTask()">Adicionar Tarefa</button>
+  </div>
+
+  <div id="taskList"></div>
+
+  <button onclick="exportBackup()">📤 Exportar Backup</button>
+  <button onclick="importBackup()">📥 Importar Backup</button>
+  <input type="file" id="importFile" style="display:none">
+
+  <h2>📊 Dashboard</h2>
+  <canvas id="taskChart" width="400" height="200"></canvas>
+
+  <h2>🗂️ Kanban</h2>
+  <div class="kanban">
+    <div class="column" id="todo"><h3>📋 A Fazer</h3></div>
+    <div class="column" id="inprogress"><h3>⚙️ Em Progresso</h3></div>
+    <div class="column" id="done"><h3>✅ Concluído</h3></div>
+  </div>
+
+  <audio id="completeSound" src="complete.mp3"></audio>
+
+  <script src="./script.js"></script>
+</body>
+</html>
